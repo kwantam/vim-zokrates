@@ -13,7 +13,7 @@ syn region  zokratesComment      start="\/\*" end="\*\/" contains=@Spell,zokrate
 syn match   zokratesNumber       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
 syn match   zokratesEscape       /\\[btnfr"/\\]/ display contained
 syn region  zokratesString       start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=zokratesEscape oneline
-syn keyword zokratesType         field bool
+syn keyword zokratesType         field bool u8 u16 u32 u64
 syn keyword zokratesModifier     private
 syn keyword zokratesConditional  if then else endif fi
 syn keyword zokratesStatement    return
