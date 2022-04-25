@@ -14,14 +14,15 @@ syn match   zokratesNumber       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
 syn match   zokratesEscape       /\\[btnfr"/\\]/ display contained
 syn region  zokratesString       start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=zokratesEscape oneline
 syn keyword zokratesType         field bool u8 u16 u32 u64
-syn keyword zokratesModifier     private
+syn keyword zokratesModifier     private const
 syn keyword zokratesConditional  if then else endif fi
-syn keyword zokratesStatement    return
+syn keyword zokratesStatement    return assert
 syn keyword zokratesStatement    def nextgroup=zokratesFunction skipwhite
 syn match   zokratesFunction     "\h\w*" display contained
 syn keyword zokratesRepeat       for endfor in do
 syn keyword zokratesBoolean      true false
 syn keyword zokratesStructure    struct
+syn keyword zokratesTypedef      type
 syn keyword zokratesInclude      from nextgroup=zokratesString
 syn keyword zokratesInclude      import nextgroup=zokratesString
 syn keyword zokratesStatement    as
@@ -43,6 +44,7 @@ hi def link zokratesFunction    Function
 hi def link zokratesRepeat      Repeat 
 hi def link zokratesBoolean     Boolean
 hi def link zokratesStructure   Structure
+hi def link zokratesTypedef     Typedef
 hi def link zokratesInclude     Include
 hi def link zokratesBraces      Delimiter
 
